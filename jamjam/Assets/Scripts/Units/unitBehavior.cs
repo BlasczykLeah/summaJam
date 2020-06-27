@@ -24,9 +24,12 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     bool evolved = false;
     spaceComponent mySpace;
 
-    public void objectSpawned(spaceComponent startingPoint)
+    public void objectSpawned(spaceComponent startingPoint, bool isPlayer)
     {
+        playerUnit = isPlayer;
         mySpace = startingPoint;
+
+        mySpace.addUnit(this);
         StartCoroutine(waitToAct(speed));
     }
 
@@ -46,11 +49,35 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     {
         //move or attack
         spaceComponent nextSpace = mySpace.chooseSpace(playerUnit);
+        if (!nextSpace)
+        {
+            Debug.Log("Unable to move, wating for next turn.");
+            return;
+        }
+        else if(nextSpace == mySpace)
+        {
+            // player takes damage
+            if (playerUnit)
+            {
+                GameObject.Find("EnemyObject").GetComponent<playerManager>().health--;
+                if (evolved) GameObject.Find("EnemyObject").GetComponent<playerManager>().health--;
+            }
+            else
+            {
+                GameObject.Find("PlayerObject").GetComponent<playerManager>().health--;
+                if (evolved) GameObject.Find("PlayerObject").GetComponent<playerManager>().health--;
+            }
+
+            mySpace.removeUnit();
+            Destroy(gameObject);
+            return;
+        }
 
         bool killed = false;
         if (nextSpace.unit)
         {
-            // attacking
+            Debug.Log("Attacking!");
+
             if (nextSpace.unit.takeDamage(damage))
             {
                 killed = true;
@@ -59,7 +86,8 @@ public class unitBehavior : MonoBehaviour, IEvolveable
         }
         if(!nextSpace.unit || killed)
         {
-            // moving
+            Debug.Log("Moving to a new space");
+
             mySpace.removeUnit();
             mySpace = nextSpace;
             nextSpace.addUnit(this);
@@ -86,7 +114,17 @@ public class unitBehavior : MonoBehaviour, IEvolveable
 
     void dead()
     {
-        // does something
+        if (playerUnit)
+        {
+            GameObject.Find("EnemyObject").GetComponent<playerManager>().money += cost;
+            if (evolved) GameObject.Find("EnemyObject").GetComponent<playerManager>().money += cost;
+        }
+        else
+        {
+            GameObject.Find("PlayerObject").GetComponent<playerManager>().money += cost;
+            if (evolved) GameObject.Find("PlayerObject").GetComponent<playerManager>().money += cost;
+        }
+
         Destroy(gameObject);
     }
 
