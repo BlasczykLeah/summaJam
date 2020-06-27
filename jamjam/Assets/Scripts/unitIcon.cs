@@ -25,8 +25,8 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     void Start()
     {
-        cost = myUnitPrefab.GetComponent<unitBehavior>().cost;
-        cooldown = cdReset = myUnitPrefab.GetComponent<unitBehavior>().cooldown;
+        cost = myUnitPrefab.transform.GetChild(0).GetComponent<unitBehavior>().cost;
+        cooldown = cdReset = myUnitPrefab.transform.GetChild(0).GetComponent<unitBehavior>().cooldown;
         fillImage.gameObject.SetActive(false);
     }
 
@@ -85,7 +85,7 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                 // place dude
                 GameObject newUnit = Instantiate(myUnitPrefab, start.transform.position, Quaternion.identity);
                 //start.addUnit(newUnit.GetComponent<unitBehavior>());
-                newUnit.GetComponent<unitBehavior>().objectSpawned(start, true);
+                newUnit.transform.GetChild(0).GetComponent<unitBehavior>().objectSpawned(start, true);
 
                 buyCooldown = true;
                 fillImage.gameObject.SetActive(true);

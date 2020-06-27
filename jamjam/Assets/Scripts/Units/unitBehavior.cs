@@ -21,6 +21,9 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     [Tooltip("Cost of unit. (gold?)")]
     public int cost;
 
+    bool moving = false;
+    Vector3 location;
+
     bool evolved = false;
     spaceComponent mySpace;
 
@@ -36,6 +39,15 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     void Update()
     {
         if (evolveCondition() && !evolved) evolve();
+
+        if (moving)
+        {
+            transform.parent.position = Vector3.MoveTowards(transform.parent.position, location, Time.deltaTime * 2);
+            if(Vector2.Distance(transform.parent.position, location) < 0.001F)
+            {
+                moving = false;
+            }
+        }
     }
 
     IEnumerator waitToAct(float seconds)
@@ -93,9 +105,13 @@ public class unitBehavior : MonoBehaviour, IEvolveable
             nextSpace.addUnit(this);
 
             // move the dude
-            transform.position = nextSpace.transform.position;
+            GetComponent<Animator>().SetTrigger("Jump");
+            location = nextSpace.transform.position;
+            Invoke("setMove", 0.2F);
         }
     }
+
+    void setMove() { moving = true; }
 
     public bool takeDamage(int dmg)
     {
