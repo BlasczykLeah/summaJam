@@ -13755,6 +13755,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerUnit: 0
+  healthBar: {fileID: 8582693889024211576, guid: 421cc049adcd9ff4986d0f1d78eb7e17,
+    type: 3}
+  barOffset: -20
   health: 3
   damage: 2
   speed: 1.2
