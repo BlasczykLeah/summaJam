@@ -12,7 +12,8 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public GameObject myIcon;
 
     public Image fillImage;
-    public Image costImage; // maybe?
+    public Image costImage;
+    bool costImageEnabled = true;
 
     [SerializeField]
     bool buyCooldown = false;    // buying cooldown
@@ -20,7 +21,7 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField]
     bool purchaseAllowed = false;    // all buying conditions correct
 
-    int cost;
+    public int cost;
     float cooldown, cdReset;
 
     void Start()
@@ -28,6 +29,7 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         cost = myUnitPrefab.transform.GetChild(0).GetComponent<unitBehavior>().cost;
         cooldown = cdReset = myUnitPrefab.transform.GetChild(0).GetComponent<unitBehavior>().cooldown;
         fillImage.gameObject.SetActive(false);
+        costImage.gameObject.SetActive(true);
     }
 
     void Update()
@@ -45,6 +47,20 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                 fillImage.gameObject.SetActive(false);
                 cooldown = cdReset;
             }
+        }
+    }
+
+    public void checkPrices(int money)
+    {
+        if(costImageEnabled && money >= cost)
+        {
+            costImageEnabled = false;
+            costImage.gameObject.SetActive(false);
+        } 
+        if(!costImageEnabled && money < cost)
+        {
+            costImageEnabled = true;
+            costImage.gameObject.SetActive(true);
         }
     }
 

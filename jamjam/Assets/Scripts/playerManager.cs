@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class playerManager : MonoBehaviour
 {
+    public bool player;
+
     public int health;
 
     public int money;
@@ -20,6 +22,7 @@ public class playerManager : MonoBehaviour
     void endlessMoney()
     {
         money++;
+        if (player) comparePrices();
     }
 
     public spaceComponent buyAUnit(int price)
@@ -29,6 +32,7 @@ public class playerManager : MonoBehaviour
             if (startingPlacesRaycasts[i].hovered && !startingPlacesRaycasts[i].mySpace.unit)
             {
                 money -= price;
+                comparePrices();
                 return startingPlacesRaycasts[i].mySpace;
             }
         }
@@ -44,5 +48,10 @@ public class playerManager : MonoBehaviour
             if (show) a.GetComponent<Animator>().SetTrigger("On");
             else a.GetComponent<Animator>().SetTrigger("Off");
         }
+    }
+
+    public void comparePrices()
+    {
+        foreach (unitIcon a in unitShop) a.checkPrices(money);
     }
 }
