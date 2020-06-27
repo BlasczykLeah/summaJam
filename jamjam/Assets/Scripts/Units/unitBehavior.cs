@@ -45,7 +45,7 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     void act()
     {
         //move or attack
-        spaceComponent nextSpace = mySpace.chooseSpace();
+        spaceComponent nextSpace = mySpace.chooseSpace(playerUnit);
 
         bool killed = false;
         if (nextSpace.unit)
@@ -54,17 +54,18 @@ public class unitBehavior : MonoBehaviour, IEvolveable
             if (nextSpace.unit.takeDamage(damage))
             {
                 killed = true;
-                // moneys
+                nextSpace.removeUnit();
             }
         }
         if(!nextSpace.unit || killed)
         {
             // moving
-            mySpace.unit = null;
+            mySpace.removeUnit();
             mySpace = nextSpace;
-            nextSpace.unit = this;
+            nextSpace.addUnit(this);
 
             // move the dude
+            transform.position = nextSpace.transform.position;
         }
     }
 

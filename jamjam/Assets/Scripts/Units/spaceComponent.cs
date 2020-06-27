@@ -20,6 +20,7 @@ public class spaceComponent : MonoBehaviour
     public Material defaultMat;
 
     public unitBehavior unit;
+    public GameObject myHex;
 
     public spaceComponent chooseSpace(bool player)
     {
@@ -45,9 +46,18 @@ public class spaceComponent : MonoBehaviour
         }
     }
 
-    public void newUnit(unitBehavior u)
+    public void removeUnit()
+    {
+        unit = null;
+        myHex.GetComponent<MeshRenderer>().material = defaultMat;
+    }
+
+    public void addUnit(unitBehavior u)
     {
         if (unit) return;
-        // colors and fun stuffs
+
+        unit = u;
+        if(u.playerUnit) myHex.GetComponent<MeshRenderer>().material = playerMat;
+        else myHex.GetComponent<MeshRenderer>().material = enemyMat;
     }
 }
