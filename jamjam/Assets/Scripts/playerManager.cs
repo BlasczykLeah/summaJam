@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class playerManager : MonoBehaviour
 {
@@ -14,9 +15,29 @@ public class playerManager : MonoBehaviour
 
     public startingPlace[] startingPlacesRaycasts;
 
+    public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI healthText;
+
+    public TextMeshPro moneyTextE;
+    public TextMeshPro healthTextE;
+
     private void Start()
     {
         InvokeRepeating("endlessMoney", 0, 1);
+    }
+
+    private void Update()
+    {
+        if (player)
+        {
+            moneyText.text = "Money: " + money;
+            healthText.text = "Health: " + health;
+        }
+        else
+        {
+            moneyTextE.text = "Money: " + money;
+            healthTextE.text = "Health: " + health;
+        }
     }
 
     void endlessMoney()

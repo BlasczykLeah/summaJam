@@ -21285,6 +21285,10 @@ MonoBehaviour:
   money: 0
   unitShop: []
   startingPlacesRaycasts: []
+  moneyText: {fileID: 0}
+  healthText: {fileID: 0}
+  moneyTextE: {fileID: 1370420959}
+  healthTextE: {fileID: 1006540910}
 --- !u!4 &952391237
 Transform:
   m_ObjectHideFlags: 0
@@ -32107,6 +32111,10 @@ MonoBehaviour:
   - {fileID: 968857167669520403}
   - {fileID: 968857167083342326}
   - {fileID: 968857167661966033}
+  moneyText: {fileID: 1819075000}
+  healthText: {fileID: 787582366}
+  moneyTextE: {fileID: 0}
+  healthTextE: {fileID: 0}
 --- !u!4 &1450369475
 Transform:
   m_ObjectHideFlags: 0
