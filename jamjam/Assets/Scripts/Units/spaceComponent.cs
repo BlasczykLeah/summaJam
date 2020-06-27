@@ -58,7 +58,7 @@ public class spaceComponent : MonoBehaviour
             {
                 if (backLeft.unit != null && backLeft.unit.playerUnit)
                 {
-                    Debug.Log("i move left cause enemy", gameObject);
+                    //Debug.Log("i move left cause enemy", gameObject);
                     return backLeft;
                 }
             }
@@ -67,14 +67,14 @@ public class spaceComponent : MonoBehaviour
             {
                 if (backRight.unit != null && backRight.unit.playerUnit)
                 {
-                    Debug.Log("i move right cause enemy", gameObject);
+                    //Debug.Log("i move right cause enemy", gameObject);
                     return backRight;
                 }
             }
 
             if (backLeft == null && backRight == null)
             {
-                Debug.Log("Player score!");
+                Debug.Log("Enemy score!");
                 return this;
             }
 
@@ -84,7 +84,7 @@ public class spaceComponent : MonoBehaviour
 
             if (canLeft && canRight)
             {
-                Debug.Log("i pick random", gameObject);
+                //Debug.Log("i pick random", gameObject);
 
                 int rand = Random.Range(0, 100);
                 if (rand % 2 == 0) return backLeft;
@@ -93,16 +93,16 @@ public class spaceComponent : MonoBehaviour
 
             if (canLeft)
             {
-                Debug.Log("i can move left", gameObject);
+                //Debug.Log("i can move left", gameObject);
                 return backLeft;
             }
             if (canRight)
             {
-                Debug.Log("i can move right", gameObject);
+                //Debug.Log("i can move right", gameObject);
                 return backRight;
             }
 
-            Debug.Log("i cant move", gameObject);
+            //Debug.Log("i cant move", gameObject);
             return null;
         }
     }
