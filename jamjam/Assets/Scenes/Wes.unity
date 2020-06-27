@@ -3788,7 +3788,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 411595581}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &196367862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4116,7 +4122,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &206003094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5451,7 +5463,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &271512602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8236,7 +8254,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 954168947}
   right: {fileID: 680090882}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!4 &420368390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98a840382a4106149b54b85766136d43,
@@ -8638,7 +8662,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 629388490}
   right: {fileID: 1589256440}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!43 &445195579
 Mesh:
   m_ObjectHideFlags: 0
@@ -10101,7 +10131,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &518060880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10601,6 +10637,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 567675361}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &563124886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563124888}
+  - component: {fileID: 563124887}
+  m_Layer: 0
+  m_Name: Cloud Holder (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &563124887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563124886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed6b95b06e95164c9a79cf920ad4184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!4 &563124888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563124886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 51.6, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1084332036}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &567675361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10941,7 +11022,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!4 &578833617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf5cd9d7288d66345a0427a6dbba05e0,
@@ -12187,7 +12274,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 2137727804}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &630440885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12812,7 +12905,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!4 &669886088 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf5cd9d7288d66345a0427a6dbba05e0,
@@ -13058,7 +13157,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 694699901}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &681014369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13480,7 +13585,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!4 &698029734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6534178072351031236, guid: f42c52336ac35354884d472ef0637324,
@@ -14283,7 +14394,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &732589226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14434,7 +14551,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!4 &740726800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6534178072351031236, guid: f42c52336ac35354884d472ef0637324,
@@ -18605,7 +18728,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 437943579}
   right: {fileID: 1357916846}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &930625058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19230,7 +19359,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1899444997}
   right: {fileID: 694699901}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!4 &955995737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98a840382a4106149b54b85766136d43,
@@ -19392,7 +19527,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1357916846}
   right: {fileID: 1310907191}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!4 &978004507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf5cd9d7288d66345a0427a6dbba05e0,
@@ -20274,7 +20415,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!43 &1031211506
 Mesh:
   m_ObjectHideFlags: 0
@@ -20846,7 +20993,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!43 &1066167854
 Mesh:
   m_ObjectHideFlags: 0
@@ -21483,6 +21636,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 628463549}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1084332035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d83dddd118914bf49897aaa28be64c49,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571599703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1084332036 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571599703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1084332037
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084332035}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd01e15e1577d0d49bef2474b56d7e64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1085139611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21716,7 +21900,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 270398902}
   right: {fileID: 1899444997}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!43 &1094266450
 Mesh:
   m_ObjectHideFlags: 0
@@ -25554,7 +25744,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1091116308}
   right: {fileID: 954168947}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1322647009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26635,7 +26831,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1589256440}
   right: {fileID: 1091116308}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!43 &1361184951
 Mesh:
   m_ObjectHideFlags: 0
@@ -31189,7 +31391,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1562242911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31626,6 +31834,105 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &1571599703
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 563124888}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -40.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.47
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.17364816
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9848078
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8820e319630424a40a0556f2c43c1a19, type: 2}
+    - target: {fileID: -7511558181221131132, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d83dddd118914bf49897aaa28be64c49,
+        type: 3}
+      propertyPath: m_Name
+      value: Cloud
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d83dddd118914bf49897aaa28be64c49, type: 3}
 --- !u!4 &1575166948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf5cd9d7288d66345a0427a6dbba05e0,
@@ -31781,7 +32088,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 437943579}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1581132625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31937,7 +32250,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 2137727804}
   right: {fileID: 270398902}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1589799499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36170,7 +36489,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1784134194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36315,7 +36640,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1786494526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38324,7 +38655,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1892625766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38563,7 +38900,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1902172849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41009,7 +41352,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &1993322012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42373,7 +42722,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1310907191}
   right: {fileID: 411595581}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!4 &2100478997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98a840382a4106149b54b85766136d43,
@@ -43202,7 +43557,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &2134421359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43342,7 +43703,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  hasUnit: 0
+  playerMat: {fileID: 0}
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  enemyMat: {fileID: 0}
+  defaultMat: {fileID: 0}
+  unit: {fileID: 0}
+  myHex: {fileID: 0}
 --- !u!1001 &2145942829
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,8 +10,7 @@ public class CloudMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        start = transform.position;
-        //target = new Vector3(37, 3.47f, 28.13f);
+        start = new Vector3(0.6f, -1, 0);
         target = new Vector3(81, -1, 0);
     }
 
