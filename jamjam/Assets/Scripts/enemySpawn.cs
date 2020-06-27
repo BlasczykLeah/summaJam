@@ -11,13 +11,18 @@ public class enemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myChoice = chooseNewChoice();
+        chooseNewChoice();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void tryToSpawn()
+    {
+
     }
 
     void chooseNewChoice()

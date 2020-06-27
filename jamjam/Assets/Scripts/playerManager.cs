@@ -23,6 +23,7 @@ public class playerManager : MonoBehaviour
     {
         money++;
         if (player) comparePrices();
+        else GetComponent<enemySpawn>().tryToSpawn();
     }
 
     public spaceComponent buyAUnit(int price)
