@@ -26,15 +26,20 @@ public class spaceComponent : MonoBehaviour
     {
         if (player)
         {
-            if (left) if (left.unit || !right) return left;
+            if (left) if ((left.unit && !left.unit.playerUnit) || !right) return left;
 
-            if (right) if (right.unit || !left) return right;
+            if (right) if ((right.unit && !right.unit.playerUnit) || !left) return right;
 
-            if (!left && !right) Debug.Log("Player score!");
+            if (!left && !right)
+            {
+                Debug.Log("Player score!");
+                return this;
+            }
 
             int rand = Random.Range(0, 100);
-            if (rand % 2 == 0) return left;
-            else return right;
+            if (rand % 2 == 0 && !left.unit) return left;
+            else if (!right.unit) return right;
+            else return null;
         }
         else
         {
@@ -42,11 +47,16 @@ public class spaceComponent : MonoBehaviour
 
             if (backRight) if (backRight.unit || !backLeft) return backRight;
 
-            if (!backLeft && !backRight) Debug.Log("Enemy score!");
+            if (!backLeft && !backRight)
+            {
+                Debug.Log("Enemy score!");
+                return this;
+            }
 
             int rand = Random.Range(0, 100);
-            if (rand % 2 == 0) return backLeft;
-            else return backRight;
+            if (rand % 2 == 0 && !backLeft.unit) return backLeft;
+            else if (!backRight.unit) return backRight;
+            else return null;
         }
     }
 

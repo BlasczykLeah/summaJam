@@ -12,6 +12,16 @@ public class playerManager : MonoBehaviour
 
     public startingPlace[] startingPlacesRaycasts;
 
+    private void Start()
+    {
+        InvokeRepeating("endlessMoney", 0, 1);
+    }
+
+    void endlessMoney()
+    {
+        money++;
+    }
+
     public spaceComponent buyAUnit(int price)
     {
         for(int i = 0; i < startingPlacesRaycasts.Length; i++)
