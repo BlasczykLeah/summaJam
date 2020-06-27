@@ -30,6 +30,8 @@ public class spaceComponent : MonoBehaviour
 
             if (right) if (right.unit || !left) return right;
 
+            if (!left && !right) Debug.Log("Player score!");
+
             int rand = Random.Range(0, 100);
             if (rand % 2 == 0) return left;
             else return right;
@@ -39,6 +41,8 @@ public class spaceComponent : MonoBehaviour
             if (backLeft) if (backLeft.unit || !backRight) return backLeft;
 
             if (backRight) if (backRight.unit || !backLeft) return backRight;
+
+            if (!backLeft && !backRight) Debug.Log("Enemy score!");
 
             int rand = Random.Range(0, 100);
             if (rand % 2 == 0) return backLeft;
