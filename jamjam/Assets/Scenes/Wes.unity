@@ -21154,7 +21154,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da27639940a91eb4e8984c1d399ef6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  units: []
+  units:
+  - {fileID: 3196104491405113667, guid: 2f84bd7899cff69408de6b4865e587f8, type: 3}
+  - {fileID: 7050320126618797731, guid: 5b39b943e0d5e3542b591650c35a6eff, type: 3}
+  - {fileID: 1188447065764794020, guid: 42b90e0a5a397f04da6233278e4098ef, type: 3}
+  - {fileID: 6322228174043680337, guid: eeb218b36ba9ace48b27af480808f07c, type: 3}
+  mySpawns:
+  - {fileID: 1989798420}
+  - {fileID: 1890592648}
+  - {fileID: 1560425913}
+  - {fileID: 735157309}
+  - {fileID: 728195258}
 --- !u!1 &954168945
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,37 +26,84 @@ public class spaceComponent : MonoBehaviour
     {
         if (player)
         {
-            if (left) if ((left.unit && !left.unit.playerUnit) || !right) return left;
+            if (left != null) if (left.unit != null && !left.unit.playerUnit) return left;
 
-            if (right) if ((right.unit && !right.unit.playerUnit) || !left) return right;
+            if (right != null) if (right.unit != null && !right.unit.playerUnit) return right;
 
-            if (!left && !right)
+            if (left == null && right == null)
             {
                 Debug.Log("Player score!");
                 return this;
             }
 
-            int rand = Random.Range(0, 100);
-            if (rand % 2 == 0 && !left.unit) return left;
-            else if (!right.unit) return right;
-            else return null;
+            bool canLeft = false, canRight = false;
+            if (left != null && left.unit == null) canLeft = true;
+            if (right != null && right.unit == null) canRight = true;
+
+            if (canLeft && canRight)
+            {
+                int rand = Random.Range(0, 100);
+                if (rand % 2 == 0) return left;
+                else return right;
+            }
+
+            if (canLeft) return left;
+            if (canRight) return right;
+
+            return null;
         }
         else
         {
-            if (backLeft) if (backLeft.unit || !backRight) return backLeft;
-
-            if (backRight) if (backRight.unit || !backLeft) return backRight;
-
-            if (!backLeft && !backRight)
+            if (backLeft != null)
             {
-                Debug.Log("Enemy score!");
+                if (backLeft.unit != null && backLeft.unit.playerUnit)
+                {
+                    Debug.Log("i move left cause enemy", gameObject);
+                    return backLeft;
+                }
+            }
+
+            if (backRight != null)
+            {
+                if (backRight.unit != null && backRight.unit.playerUnit)
+                {
+                    Debug.Log("i move right cause enemy", gameObject);
+                    return backRight;
+                }
+            }
+
+            if (backLeft == null && backRight == null)
+            {
+                Debug.Log("Player score!");
                 return this;
             }
 
-            int rand = Random.Range(0, 100);
-            if (rand % 2 == 0 && !backLeft.unit) return backLeft;
-            else if (!backRight.unit) return backRight;
-            else return null;
+            bool canLeft = false, canRight = false;
+            if (backLeft != null && backLeft.unit == null) canLeft = true;
+            if (backRight != null && backRight.unit == null) canRight = true;
+
+            if (canLeft && canRight)
+            {
+                Debug.Log("i pick random", gameObject);
+
+                int rand = Random.Range(0, 100);
+                if (rand % 2 == 0) return backLeft;
+                else return backRight;
+            }
+
+            if (canLeft)
+            {
+                Debug.Log("i can move left", gameObject);
+                return backLeft;
+            }
+            if (canRight)
+            {
+                Debug.Log("i can move right", gameObject);
+                return backRight;
+            }
+
+            Debug.Log("i cant move", gameObject);
+            return null;
         }
     }
 
