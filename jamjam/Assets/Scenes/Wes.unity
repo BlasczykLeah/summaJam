@@ -20632,6 +20632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952391237}
   - component: {fileID: 952391236}
+  - component: {fileID: 952391238}
   m_Layer: 0
   m_Name: EnemyObject
   m_TagString: Untagged
@@ -20651,6 +20652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8327a66b307058e43b152f20ba86eafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   health: 10
   money: 0
   unitShop: []
@@ -20669,6 +20671,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952391238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952391235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da27639940a91eb4e8984c1d399ef6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  units: []
 --- !u!1 &954168945
 GameObject:
   m_ObjectHideFlags: 0
@@ -31028,6 +31043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8327a66b307058e43b152f20ba86eafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 1
   health: 10
   money: 50
   unitShop:
@@ -47110,6 +47126,7 @@ MonoBehaviour:
   costImage: {fileID: 551474836}
   buyCooldown: 0
   purchaseAllowed: 0
+  cost: 0
 --- !u!224 &968857166840843004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47241,6 +47258,7 @@ MonoBehaviour:
   costImage: {fileID: 2020026212}
   buyCooldown: 0
   purchaseAllowed: 0
+  cost: 0
 --- !u!114 &968857167011071998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47434,6 +47452,7 @@ MonoBehaviour:
   costImage: {fileID: 769869791}
   buyCooldown: 0
   purchaseAllowed: 0
+  cost: 0
 --- !u!224 &968857167180782422
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47583,6 +47602,7 @@ MonoBehaviour:
   costImage: {fileID: 1428611463}
   buyCooldown: 0
   purchaseAllowed: 0
+  cost: 0
 --- !u!1 &968857167661966028
 GameObject:
   m_ObjectHideFlags: 0
