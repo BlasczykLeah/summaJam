@@ -132,13 +132,13 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     {
         if (playerUnit)
         {
-            GameObject.Find("EnemyObject").GetComponent<playerManager>().money += cost;
-            if (evolved) GameObject.Find("EnemyObject").GetComponent<playerManager>().money += cost;
+            GameObject.Find("EnemyObject").GetComponent<playerManager>().money += (cost/ 5);
+            if (evolved) GameObject.Find("EnemyObject").GetComponent<playerManager>().money += (cost / 5);
         }
         else
         {
-            GameObject.Find("PlayerObject").GetComponent<playerManager>().money += cost;
-            if (evolved) GameObject.Find("PlayerObject").GetComponent<playerManager>().money += cost;
+            GameObject.Find("PlayerObject").GetComponent<playerManager>().money += (cost / 5);
+            if (evolved) GameObject.Find("PlayerObject").GetComponent<playerManager>().money += (cost / 5);
         }
 
         Destroy(gameObject);

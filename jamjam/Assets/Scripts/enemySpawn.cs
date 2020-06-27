@@ -20,7 +20,7 @@ public class enemySpawn : MonoBehaviour
         for (int i = 0; i < spawnCooldowns.Length; i++) spawnCooldowns[i] = false;
         cooldowns = new float[units.Length];
 
-        chooseNewChoice();
+        myChoice = 0;
         manager = GetComponent<playerManager>();
     }
 

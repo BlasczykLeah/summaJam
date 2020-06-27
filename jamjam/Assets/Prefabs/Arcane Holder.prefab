@@ -13786,11 +13786,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerUnit: 0
-  health: 1
-  damage: 1
-  speed: 1
-  cooldown: 1
-  cost: 1
+  health: 8
+  damage: 5
+  speed: 1.8
+  cooldown: 10
+  cost: 40
 --- !u!95 &8276307041739656524
 Animator:
   serializedVersion: 3
