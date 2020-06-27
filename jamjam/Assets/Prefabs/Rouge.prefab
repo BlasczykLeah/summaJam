@@ -145,12 +145,12 @@ GameObject:
   - component: {fileID: 3343277122846979755}
   - component: {fileID: 3343277122846979754}
   m_Layer: 0
-  m_Name: Crown (1)
+  m_Name: Crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3343277122846979733
 Transform:
   m_ObjectHideFlags: 0
