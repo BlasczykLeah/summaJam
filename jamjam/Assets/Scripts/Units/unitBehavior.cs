@@ -5,6 +5,8 @@ using UnityEngine;
 public class unitBehavior : MonoBehaviour, IEvolveable
 {
     [Header("Unit Stats")]
+    public bool playerUnit;
+
     public int health;
     protected int maxHealth;
 
@@ -43,6 +45,27 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     void act()
     {
         //move or attack
+        spaceComponent nextSpace = mySpace.chooseSpace();
+
+        bool killed = false;
+        if (nextSpace.unit)
+        {
+            // attacking
+            if (nextSpace.unit.takeDamage(damage))
+            {
+                killed = true;
+                // moneys
+            }
+        }
+        if(!nextSpace.unit || killed)
+        {
+            // moving
+            mySpace.unit = null;
+            mySpace = nextSpace;
+            nextSpace.unit = this;
+
+            // move the dude
+        }
     }
 
     public bool takeDamage(int dmg)
