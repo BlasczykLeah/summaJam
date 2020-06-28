@@ -23,6 +23,8 @@ public class thiefBehavior : unitBehavior
         else myManager = GameObject.Find("EnemyObject").GetComponent<playerManager>();
         currentMoney = myManager.money;
 
+        AudioMan.inst.PlayThief();
+
         mySpace.addUnit(this);
         StartCoroutine(waitToAct(speed));
     }

@@ -17,6 +17,8 @@ public class knightBehavior : unitBehavior
         playerUnit = isPlayer;
         mySpace = startingPoint;
 
+        AudioMan.inst.PlayKnight();
+
         mySpace.addUnit(this);
         StartCoroutine(waitToAct(speed));
     }

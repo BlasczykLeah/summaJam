@@ -20,6 +20,8 @@ public class chungBehavior : unitBehavior
         playerUnit = isPlayer;
         mySpace = startingPoint;
 
+        AudioMan.inst.PlayChungus();
+
         mySpace.addUnit(this);
         StartCoroutine(waitToAct(speed));
     }

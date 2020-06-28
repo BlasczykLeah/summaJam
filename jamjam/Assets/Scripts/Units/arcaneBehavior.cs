@@ -15,6 +15,8 @@ public class arcaneBehavior : unitBehavior
         playerUnit = isPlayer;
         mySpace = startingPoint;
 
+        AudioMan.inst.PlayArcane();
+
         mySpace.addUnit(this);
         StartCoroutine(waitToAct(speed));
     }
