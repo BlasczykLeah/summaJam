@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class unitBehavior : MonoBehaviour, IEvolveable
+public class unitBehavior : MonoBehaviour
 {
     [Header("Unit Stats")]
     public bool playerUnit;
 
     public GameObject healthBar;
-    GameObject myHealthBar;
+    protected GameObject myHealthBar;
     public float barOffset;
+
+    public GameObject particles;
 
     public int health;
     protected int maxHealth;
@@ -26,13 +28,13 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     [Tooltip("Cost of unit. (gold?)")]
     public int cost;
 
-    bool moving = false;
-    Vector3 location;
+    protected bool moving = false;
+    protected Vector3 location;
 
-    bool evolved = false;
-    spaceComponent mySpace;
+    protected bool evolved = false;
+    protected spaceComponent mySpace;
 
-    public void objectSpawned(spaceComponent startingPoint, bool isPlayer)
+    public virtual void objectSpawned(spaceComponent startingPoint, bool isPlayer)
     {
         maxHealth = health;
 
@@ -47,9 +49,9 @@ public class unitBehavior : MonoBehaviour, IEvolveable
         StartCoroutine(waitToAct(speed));
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        if (evolveCondition() && !evolved) evolve();
+        if (!evolved) if(evolveCondition()) evolve();
 
         if (moving)
         {
@@ -65,14 +67,14 @@ public class unitBehavior : MonoBehaviour, IEvolveable
         }
     }
 
-    IEnumerator waitToAct(float seconds)
+    protected IEnumerator waitToAct(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         act();
         StartCoroutine(waitToAct(seconds));
     }
 
-    void act()
+    protected virtual void act()
     {
         //move or attack
         spaceComponent nextSpace = mySpace.chooseSpace(playerUnit);
@@ -127,7 +129,7 @@ public class unitBehavior : MonoBehaviour, IEvolveable
         }
     }
 
-    void setMove() { moving = true; }
+    protected void setMove() { moving = true; }
 
     public bool takeDamage(int dmg)
     {
@@ -163,14 +165,20 @@ public class unitBehavior : MonoBehaviour, IEvolveable
         Destroy(gameObject);
     }
 
-    public virtual bool evolveCondition()
-    {
-        return false;
-    }
-
-    public virtual void evolve()
+    public void evolve()
     {
         evolved = true;
-        Debug.Log("I have evolved!");
+        transform.GetChild(0).gameObject.SetActive(true);
+        Instantiate(particles, transform.GetChild(1).position, Quaternion.identity);
+
+        health *= 2;
+        cost *= 2;
+        speed /= 2F;
+        damage *= 2;
+    }
+
+    protected virtual bool evolveCondition()
+    {
+        return false;
     }
 }

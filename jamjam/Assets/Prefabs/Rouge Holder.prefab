@@ -13641,8 +13641,8 @@ GameObject:
   - component: {fileID: 1611109470187980482}
   - component: {fileID: 1611109470187980493}
   - component: {fileID: 1611109470187980492}
-  - component: {fileID: 1611109470187980481}
   - component: {fileID: 2854439841619335207}
+  - component: {fileID: 6095401048214866700}
   m_Layer: 0
   m_Name: Rouge
   m_TagString: Untagged
@@ -13662,6 +13662,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 1611109469305370485}
+  - {fileID: 4355114666099973709}
   m_Father: {fileID: 4668412462439289758}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13742,27 +13743,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1611109470187980481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611109470187980495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf18e539277bc0499caf2827f8bb89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerUnit: 0
-  healthBar: {fileID: 8582693889024211576, guid: 421cc049adcd9ff4986d0f1d78eb7e17,
-    type: 3}
-  barOffset: -20
-  health: 3
-  damage: 2
-  speed: 1.2
-  cooldown: 8
-  cost: 20
 --- !u!95 &2854439841619335207
 Animator:
   serializedVersion: 3
@@ -13782,6 +13762,60 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6095401048214866700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611109470187980495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04708eeb6859c9144bb5fa34231b2e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerUnit: 0
+  healthBar: {fileID: 8582693889024211576, guid: 421cc049adcd9ff4986d0f1d78eb7e17,
+    type: 3}
+  barOffset: -20
+  particles: {fileID: 5591921227661375240, guid: e7d683f7304efe540b601e0dc997ad78,
+    type: 3}
+  health: 3
+  damage: 2
+  speed: 1.2
+  cooldown: 8
+  cost: 20
+  moneyEarned: 0
+--- !u!1 &4636356733512157739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4355114666099973709}
+  m_Layer: 0
+  m_Name: ParticlesSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4355114666099973709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636356733512157739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1611109470187980480}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7050320126618797731
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,8 +44,8 @@ GameObject:
   - component: {fileID: 7680933611298036173}
   - component: {fileID: 7680933611298036172}
   - component: {fileID: 7680933611298036168}
-  - component: {fileID: 7680933611298036169}
   - component: {fileID: 3196104491054477130}
+  - component: {fileID: 1745843332377664906}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -65,6 +65,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 7680933612353202331}
+  - {fileID: 5368446471023652874}
   m_Father: {fileID: 3196104491405113666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -145,27 +146,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7680933611298036169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7680933611298036175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf18e539277bc0499caf2827f8bb89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerUnit: 0
-  healthBar: {fileID: 8582693889024211576, guid: 421cc049adcd9ff4986d0f1d78eb7e17,
-    type: 3}
-  barOffset: -15
-  health: 5
-  damage: 3
-  speed: 2
-  cooldown: 3
-  cost: 10
 --- !u!95 &3196104491054477130
 Animator:
   serializedVersion: 3
@@ -185,6 +165,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1745843332377664906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7680933611298036175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed39201860e08c4a92b3fd063894440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerUnit: 0
+  healthBar: {fileID: 8582693889024211576, guid: 421cc049adcd9ff4986d0f1d78eb7e17,
+    type: 3}
+  barOffset: -15
+  particles: {fileID: 5591921227661375240, guid: e7d683f7304efe540b601e0dc997ad78,
+    type: 3}
+  health: 5
+  damage: 3
+  speed: 2
+  cooldown: 3
+  cost: 10
 --- !u!1 &7680933612353202330
 GameObject:
   m_ObjectHideFlags: 0
@@ -13813,3 +13816,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &7799584301396990009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5368446471023652874}
+  m_Layer: 0
+  m_Name: SpawnParticlesHere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5368446471023652874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7799584301396990009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7680933611298036171}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
