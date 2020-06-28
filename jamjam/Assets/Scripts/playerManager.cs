@@ -28,7 +28,7 @@ public class playerManager : MonoBehaviour
 
     private void Start()
     {
-        //if (!player) Invoke("startAI", 5);
+        //if (player) comparePrices();
         InvokeRepeating("endlessMoney", 5, 1);
     }
 
@@ -47,8 +47,6 @@ public class playerManager : MonoBehaviour
 
         if (health <= 0) lose();
     }
-
-    void startAI() { GetComponent<enemySpawn>().enabled = true; }
 
     void endlessMoney()
     {

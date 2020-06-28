@@ -41,7 +41,8 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         cost = myUnitPrefab.transform.GetChild(0).GetComponent<unitBehavior>().cost;
         cooldown = cdReset = myUnitPrefab.transform.GetChild(0).GetComponent<unitBehavior>().cooldown;
         fillImage.gameObject.SetActive(false);
-        costImage.gameObject.SetActive(true);
+        //costImage.gameObject.SetActive(true);
+        checkPrices(15);
     }
 
     void Update()
