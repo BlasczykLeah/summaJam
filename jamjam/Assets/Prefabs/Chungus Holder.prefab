@@ -13672,8 +13672,8 @@ GameObject:
   - component: {fileID: 2760794437673074727}
   - component: {fileID: 2760794437673074726}
   - component: {fileID: 2760794437673074725}
-  - component: {fileID: 2760794437673074730}
   - component: {fileID: 1511564666013406214}
+  - component: {fileID: 2926992517010861467}
   m_Layer: 0
   m_Name: Chungus
   m_TagString: Untagged
@@ -13693,6 +13693,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.4, z: 0.5}
   m_Children:
   - {fileID: 2760794435963628490}
+  - {fileID: 4366388351240336809}
   m_Father: {fileID: 9046130035879115349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13773,24 +13774,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2760794437673074730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2760794437673074724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf18e539277bc0499caf2827f8bb89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerUnit: 0
-  health: 10
-  damage: 3
-  speed: 3.5
-  cooldown: 10
-  cost: 30
 --- !u!95 &1511564666013406214
 Animator:
   serializedVersion: 3
@@ -13810,3 +13793,56 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2926992517010861467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2760794437673074724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7bc569c55ad544ca421dd0b0559761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerUnit: 0
+  healthBar: {fileID: 8582693889024211576, guid: 421cc049adcd9ff4986d0f1d78eb7e17,
+    type: 3}
+  barOffset: -25
+  particles: {fileID: 5591921227661375240, guid: e7d683f7304efe540b601e0dc997ad78,
+    type: 3}
+  health: 10
+  damage: 3
+  speed: 3.5
+  cooldown: 10
+  cost: 30
+--- !u!1 &7466464084077033825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4366388351240336809}
+  m_Layer: 0
+  m_Name: ParticleSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4366388351240336809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466464084077033825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.098, y: 1.105, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2760794437673074729}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

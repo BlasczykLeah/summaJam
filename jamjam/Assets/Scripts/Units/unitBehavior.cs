@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class unitBehavior : MonoBehaviour, IEvolveable
+public class unitBehavior : MonoBehaviour
 {
     [Header("Unit Stats")]
     public bool playerUnit;
+
+    public GameObject healthBar;
+    protected GameObject myHealthBar;
+    public float barOffset;
+
+    public GameObject particles;
 
     public int health;
     protected int maxHealth;
@@ -21,14 +28,20 @@ public class unitBehavior : MonoBehaviour, IEvolveable
     [Tooltip("Cost of unit. (gold?)")]
     public int cost;
 
-    bool moving = false;
-    Vector3 location;
+    protected bool moving = false;
+    protected Vector3 location;
 
-    bool evolved = false;
-    spaceComponent mySpace;
+    protected bool evolved = false;
+    protected spaceComponent mySpace;
 
-    public void objectSpawned(spaceComponent startingPoint, bool isPlayer)
+    public virtual void objectSpawned(spaceComponent startingPoint, bool isPlayer)
     {
+        maxHealth = health;
+
+        myHealthBar = Instantiate(healthBar, GameObject.Find("Canvas").transform);
+        Vector2 barSpot = Camera.main.WorldToScreenPoint(transform.position);
+        myHealthBar.transform.position = new Vector2(barSpot.x, barSpot.y + barOffset);
+
         playerUnit = isPlayer;
         mySpace = startingPoint;
 
@@ -36,28 +49,32 @@ public class unitBehavior : MonoBehaviour, IEvolveable
         StartCoroutine(waitToAct(speed));
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        if (evolveCondition() && !evolved) evolve();
+        if (!evolved) if(evolveCondition()) evolve();
 
         if (moving)
         {
             transform.parent.position = Vector3.MoveTowards(transform.parent.position, location, Time.deltaTime * 2);
-            if(Vector2.Distance(transform.parent.position, location) < 0.001F)
+
+            Vector3 barSpot = Camera.main.WorldToScreenPoint(transform.position);
+            myHealthBar.transform.position = new Vector3(barSpot.x, barSpot.y + barOffset, barSpot.z);
+
+            if (Vector2.Distance(transform.parent.position, location) < 0.001F)
             {
                 moving = false;
             }
         }
     }
 
-    IEnumerator waitToAct(float seconds)
+    protected IEnumerator waitToAct(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         act();
         StartCoroutine(waitToAct(seconds));
     }
 
-    void act()
+    protected virtual void act()
     {
         //move or attack
         spaceComponent nextSpace = mySpace.chooseSpace(playerUnit);
@@ -81,6 +98,7 @@ public class unitBehavior : MonoBehaviour, IEvolveable
             }
 
             mySpace.removeUnit();
+            Destroy(myHealthBar);
             Destroy(gameObject);
             return;
         }
@@ -111,12 +129,14 @@ public class unitBehavior : MonoBehaviour, IEvolveable
         }
     }
 
-    void setMove() { moving = true; }
+    protected void setMove() { moving = true; }
 
     public bool takeDamage(int dmg)
     {
         health -= dmg;
-        if(health <= 0)
+        myHealthBar.transform.GetChild(0).GetComponent<Image>().fillAmount = (float)health / (float)maxHealth;
+
+        if (health <= 0)
         {
             Debug.Log("DEAD");
             dead();
@@ -141,17 +161,24 @@ public class unitBehavior : MonoBehaviour, IEvolveable
             if (evolved) GameObject.Find("PlayerObject").GetComponent<playerManager>().money += (cost / 5);
         }
 
+        Destroy(myHealthBar);
         Destroy(gameObject);
     }
 
-    public virtual bool evolveCondition()
-    {
-        return false;
-    }
-
-    public virtual void evolve()
+    public void evolve()
     {
         evolved = true;
-        Debug.Log("I have evolved!");
+        transform.GetChild(0).gameObject.SetActive(true);
+        Instantiate(particles, transform.GetChild(1).position, Quaternion.identity);
+
+        health *= 2;
+        cost *= 2;
+        speed /= 2F;
+        damage *= 2;
+    }
+
+    protected virtual bool evolveCondition()
+    {
+        return false;
     }
 }
