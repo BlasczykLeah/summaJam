@@ -181,4 +181,10 @@ public class unitBehavior : MonoBehaviour
     {
         return false;
     }
+
+    public void gameOver()
+    {
+        Destroy(myHealthBar);
+        Destroy(gameObject);
+    }
 }
