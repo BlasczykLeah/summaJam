@@ -15,9 +15,13 @@ public class playerManager : MonoBehaviour
 
     public startingPlace[] startingPlacesRaycasts;
 
+    public GameObject myWinScreen;
+
+    [Header("Player Texts")]
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI healthText;
 
+    [Header("Enemy Texts")]
     public TextMeshPro moneyTextE;
     public TextMeshPro healthTextE;
 
@@ -38,6 +42,8 @@ public class playerManager : MonoBehaviour
             moneyTextE.text = "Money: " + money;
             healthTextE.text = "Health: " + health;
         }
+
+        if (health <= 0) lose();
     }
 
     void endlessMoney()
@@ -75,5 +81,33 @@ public class playerManager : MonoBehaviour
     public void comparePrices()
     {
         foreach (unitIcon a in unitShop) a.checkPrices(money);
+    }
+
+    void lose()
+    {
+        if (player)
+        {
+            FindObjectOfType<enemySpawn>().enabled = false;
+            moneyText.gameObject.SetActive(false);
+            healthText.gameObject.SetActive(false);
+
+            GameObject.Find("EnemyObject").GetComponent<playerManager>().moneyTextE.gameObject.SetActive(false);
+            GameObject.Find("EnemyObject").GetComponent<playerManager>().healthTextE.gameObject.SetActive(false);
+        }
+        else
+        {
+            GetComponent<enemySpawn>().enabled = false;
+            moneyTextE.gameObject.SetActive(false);
+            healthTextE.gameObject.SetActive(false);
+
+            GameObject.Find("PlayerObject").GetComponent<playerManager>().moneyText.gameObject.SetActive(false);
+            GameObject.Find("PlayerObject").GetComponent<playerManager>().healthText.gameObject.SetActive(false);
+        }
+
+        foreach (unitIcon a in unitShop) a.enabled = false;
+
+        foreach (unitBehavior a in FindObjectsOfType<unitBehavior>()) a.gameOver();
+
+        myWinScreen.SetActive(true);
     }
 }
