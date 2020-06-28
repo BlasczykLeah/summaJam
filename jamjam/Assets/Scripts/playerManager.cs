@@ -28,7 +28,7 @@ public class playerManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("endlessMoney", 5, 1);
+        InvokeRepeating("endlessMoney", 5, 0.7F);
     }
 
     private void Update()

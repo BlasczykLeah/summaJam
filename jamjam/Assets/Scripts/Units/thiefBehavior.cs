@@ -46,7 +46,7 @@ public class thiefBehavior : unitBehavior
 
     protected override bool evolveCondition()
     {
-        if (moneyEarned >= 10) return true;
+        if (moneyEarned >= 20) return true;
         else return false;
     }
 }

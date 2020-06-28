@@ -10136,7 +10136,7 @@ MonoBehaviour:
 
     Evolve Condition:
 
-    If you gain 10 coins while I am on the battlefield.'
+    If you gain 20 coins while I am on the battlefield.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d65d85335b1e094459399a8e9b942d2e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
