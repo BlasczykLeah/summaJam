@@ -6,6 +6,21 @@ public class knightBehavior : unitBehavior
 {
     int peacefulSpaces = 1;
 
+    public override void objectSpawned(spaceComponent startingPoint, bool isPlayer)
+    {
+        maxHealth = health;
+
+        myHealthBar = Instantiate(healthBar, GameObject.Find("Canvas").transform);
+        Vector2 barSpot = Camera.main.WorldToScreenPoint(transform.position);
+        myHealthBar.transform.position = new Vector2(barSpot.x, barSpot.y + barOffset);
+
+        playerUnit = isPlayer;
+        mySpace = startingPoint;
+
+        mySpace.addUnit(this);
+        StartCoroutine(waitToAct(speed));
+    }
+
     protected override void act()
     {
         //move or attack
