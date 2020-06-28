@@ -34,6 +34,8 @@ public class knightBehavior : unitBehavior
         }
         else if (nextSpace == mySpace)
         {
+            AudioMan.inst.PlayHit();
+
             // player takes damage
             if (playerUnit)
             {
