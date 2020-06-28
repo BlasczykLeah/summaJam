@@ -16,6 +16,7 @@ public class playerManager : MonoBehaviour
     public startingPlace[] startingPlacesRaycasts;
 
     public GameObject myWinScreen;
+    public GameObject buttons;
 
     [Header("Player Texts")]
     public TextMeshProUGUI moneyText;
@@ -114,5 +115,12 @@ public class playerManager : MonoBehaviour
         foreach (unitBehavior a in FindObjectsOfType<unitBehavior>()) a.gameOver();
 
         myWinScreen.SetActive(true);
+        StartCoroutine(enableButtons(2));
+    }
+
+    IEnumerator enableButtons(float time)
+    {
+        yield return new WaitForSecondsRealtime(2);
+        buttons.SetActive(true);
     }
 }
