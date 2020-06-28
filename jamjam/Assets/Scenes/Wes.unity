@@ -24366,7 +24366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
-  health: 1
+  health: 10
   money: 25
   unitShop:
   - {fileID: 968857167544417563}
