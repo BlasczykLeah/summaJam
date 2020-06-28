@@ -96,6 +96,7 @@ public class playerManager : MonoBehaviour
 
         if (player)
         {
+            AudioMan.inst.StopSong();
             AudioMan.inst.PlayLose();
             StartCoroutine(enableButtons(7));
 
@@ -108,6 +109,7 @@ public class playerManager : MonoBehaviour
         }
         else
         {
+            AudioMan.inst.StopSong();
             AudioMan.inst.PlayWin();
             StartCoroutine(enableButtons(5));
 

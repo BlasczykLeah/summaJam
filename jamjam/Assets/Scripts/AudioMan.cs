@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioMan : MonoBehaviour
 {
 
-    public AudioSource k1, k2, t1, t2, c1, c2, a1, a2, sword, evolve, win, lose, hit;
+    public AudioSource k1, k2, t1, t2, c1, c2, a1, a2, sword, evolve, win, lose, hit, song;
     int randNum;
 
     public static AudioMan inst;
@@ -103,5 +103,15 @@ public class AudioMan : MonoBehaviour
     public void PlayHit()
     {
         hit.Play();
+    }
+
+    public void StopSong()
+    {
+        song.Stop();
+    }
+
+    public void PlaySong()
+    {
+        song.Play();
     }
 }

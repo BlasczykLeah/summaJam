@@ -11524,6 +11524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648399685}
   - component: {fileID: 648399684}
+  - component: {fileID: 648399686}
   - component: {fileID: 648399683}
   - component: {fileID: 648399687}
   - component: {fileID: 648399686}
@@ -38475,6 +38476,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 510329634, guid: cc4e61d0278e5e045bd530041cbeb93b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5074190752710314848, guid: cc4e61d0278e5e045bd530041cbeb93b,
         type: 3}
       propertyPath: m_Name
