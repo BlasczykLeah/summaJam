@@ -7,18 +7,6 @@ public class DoorStuff : MonoBehaviour
 {
     public GameObject innerds, buttons;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TurnOnInsideStuff()
     {
         innerds.SetActive(true);
@@ -27,5 +15,10 @@ public class DoorStuff : MonoBehaviour
     public void TurnOnMain()
     {
         buttons.SetActive(true);
+    }
+
+    public void slingshot()
+    {
+        Camera.main.GetComponent<Animator>().SetTrigger("Go");
     }
 }
