@@ -52963,8 +52963,8 @@ MonoBehaviour:
   unitString: Knight
   cooldownString: 'Cooldown: 3s'
   healthString: 'Health: 5'
-  damageString: 'Damage: 3'
-  speedString: 'Speed: 2s'
+  damageString: 'Damage: 2'
+  speedString: 'Speed: 2.5s'
   evolveString: 'Evolve Condition: Once I have moved 5 spaces without getting hit.'
   box: {fileID: 231166755}
 --- !u!1 &968857167661966028

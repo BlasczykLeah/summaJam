@@ -28,7 +28,6 @@ public class playerManager : MonoBehaviour
 
     private void Start()
     {
-        //if (player) comparePrices();
         InvokeRepeating("endlessMoney", 5, 1);
     }
 

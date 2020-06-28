@@ -184,8 +184,8 @@ MonoBehaviour:
   particles: {fileID: 5591921227661375240, guid: e7d683f7304efe540b601e0dc997ad78,
     type: 3}
   health: 5
-  damage: 3
-  speed: 2
+  damage: 2
+  speed: 2.5
   cooldown: 3
   cost: 10
 --- !u!1 &7680933612353202330
