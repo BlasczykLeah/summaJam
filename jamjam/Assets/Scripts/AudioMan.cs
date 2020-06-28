@@ -109,4 +109,9 @@ public class AudioMan : MonoBehaviour
     {
         song.Stop();
     }
+
+    public void PlaySong()
+    {
+        song.Play();
+    }
 }
