@@ -80,7 +80,7 @@ public class unitBehavior : MonoBehaviour
         spaceComponent nextSpace = mySpace.chooseSpace(playerUnit);
         if (!nextSpace)
         {
-            Debug.Log("Unable to move, wating for next turn.");
+            //Debug.Log("Unable to move, wating for next turn.");
             return;
         }
         else if(nextSpace == mySpace)
@@ -106,7 +106,7 @@ public class unitBehavior : MonoBehaviour
         bool killed = false;
         if (nextSpace.unit)
         {
-            Debug.Log("Attacking!");
+            //Debug.Log("Attacking!");
 
             if (nextSpace.unit.takeDamage(damage))
             {
@@ -116,7 +116,7 @@ public class unitBehavior : MonoBehaviour
         }
         if(!nextSpace.unit || killed)
         {
-            Debug.Log("Moving to a new space");
+            //Debug.Log("Moving to a new space");
 
             mySpace.removeUnit();
             mySpace = nextSpace;
@@ -173,7 +173,7 @@ public class unitBehavior : MonoBehaviour
 
         health *= 2;
         cost *= 2;
-        speed /= 2F;
+        speed /= 1.5F;
         damage *= 2;
     }
 
