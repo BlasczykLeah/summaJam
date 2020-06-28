@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioMan : MonoBehaviour
 {
 
-    public AudioSource k1, k2, t1, t2, c1, c2, a1, a2;
+    public AudioSource k1, k2, t1, t2, c1, c2, a1, a2, sword, evolve;
     int randNum;
 
     public static AudioMan inst;
@@ -78,5 +78,15 @@ public class AudioMan : MonoBehaviour
         {
             k2.Play();
         }
+    }
+
+    public void PlaySword()
+    {
+        sword.Play();
+    }
+
+    public void PlayEvolve()
+    {
+        evolve.Play();
     }
 }
