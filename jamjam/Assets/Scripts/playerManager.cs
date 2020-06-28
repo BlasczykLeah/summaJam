@@ -26,6 +26,8 @@ public class playerManager : MonoBehaviour
     public TextMeshPro moneyTextE;
     public TextMeshPro healthTextE;
 
+    bool end = false;
+
     private void Start()
     {
         InvokeRepeating("endlessMoney", 5, 0.7F);
@@ -44,7 +46,11 @@ public class playerManager : MonoBehaviour
             healthTextE.text = "Health: " + health;
         }
 
-        if (health <= 0) lose();
+        if (health <= 0 && !end)
+        {
+            end = true;
+            lose();
+        }
     }
 
     void endlessMoney()
@@ -90,6 +96,9 @@ public class playerManager : MonoBehaviour
 
         if (player)
         {
+            AudioMan.inst.PlayLose();
+            StartCoroutine(enableButtons(7));
+
             FindObjectOfType<enemySpawn>().enabled = false;
             moneyText.gameObject.SetActive(false);
             healthText.gameObject.SetActive(false);
@@ -99,6 +108,9 @@ public class playerManager : MonoBehaviour
         }
         else
         {
+            AudioMan.inst.PlayWin();
+            StartCoroutine(enableButtons(5));
+
             GetComponent<enemySpawn>().enabled = false;
             moneyTextE.gameObject.SetActive(false);
             healthTextE.gameObject.SetActive(false);
@@ -112,12 +124,13 @@ public class playerManager : MonoBehaviour
         foreach (unitBehavior a in FindObjectsOfType<unitBehavior>()) a.gameOver();
 
         myWinScreen.SetActive(true);
-        StartCoroutine(enableButtons(2));
+        //StartCoroutine(enableButtons(2));
     }
 
     IEnumerator enableButtons(float time)
     {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(time);
         buttons.SetActive(true);
+        foreach (unitBehavior a in FindObjectsOfType<unitBehavior>()) a.gameOver();
     }
 }

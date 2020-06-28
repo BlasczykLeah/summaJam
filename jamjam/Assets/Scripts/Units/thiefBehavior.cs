@@ -26,7 +26,7 @@ public class thiefBehavior : unitBehavior
         AudioMan.inst.PlayThief();
 
         mySpace.addUnit(this);
-        StartCoroutine(waitToAct(speed));
+        StartCoroutine(waitToAct(0.001F));
     }
 
     protected override void Update()

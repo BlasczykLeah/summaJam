@@ -46,7 +46,7 @@ public class unitBehavior : MonoBehaviour
         mySpace = startingPoint;
 
         mySpace.addUnit(this);
-        StartCoroutine(waitToAct(speed));
+        StartCoroutine(waitToAct(0.001F));
     }
 
     protected virtual void Update()
@@ -71,7 +71,7 @@ public class unitBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         act();
-        StartCoroutine(waitToAct(seconds));
+        StartCoroutine(waitToAct(speed));
     }
 
     protected virtual void act()
@@ -178,7 +178,9 @@ public class unitBehavior : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
         Instantiate(particles, transform.GetChild(1).position, Quaternion.identity);
 
-        health *= 2;
+        health = maxHealth;
+        myHealthBar.transform.GetChild(0).GetComponent<Image>().fillAmount = 1;
+
         cost *= 2;
         speed /= 1.5F;
         damage *= 2;
