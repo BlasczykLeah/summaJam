@@ -70,6 +70,8 @@ public class ButtonStuff : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+        doorAnim.SetTrigger("Play");
+        buttons.SetActive(false);
     }
 }
