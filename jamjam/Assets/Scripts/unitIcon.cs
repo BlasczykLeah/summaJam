@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
-public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public playerManager myPlayer;
 
@@ -23,6 +24,17 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public int cost;
     float cooldown, cdReset;
+
+    [Header("Help Box")]
+    public Sprite sprite;
+    public string unitString;
+    public string cooldownString;
+    public string healthString;
+    public string damageString;
+    public string speedString;
+    public string evolveString;
+
+    public GameObject box;  // box children:    1 = image, 2 = name, 3 = cost, 4 = health, 5 = damage, 6 = speed, 7 = evolve
 
     void Start()
     {
@@ -81,6 +93,7 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (purchaseAllowed)
         {
             myIcon.transform.position = Input.mousePosition;
+            box.SetActive(false);
         }
         else
         {
@@ -111,5 +124,27 @@ public class unitIcon : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             myIcon.SetActive(false);
             purchaseAllowed = false;
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        box.SetActive(true);
+
+        // box children:    1 = image, 2 = name, 3 = cost, 4 = health, 5 = damage, 6 = speed, 7 = evolve
+        if (box.transform.GetChild(1).GetComponent<Image>().sprite != sprite)
+        {
+            box.transform.GetChild(1).GetComponent<Image>().sprite = sprite;
+            box.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = unitString;
+            box.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = cooldownString;
+            box.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = healthString;
+            box.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = damageString;
+            box.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = speedString;
+            box.transform.GetChild(7).GetComponent<TextMeshProUGUI>().text = evolveString;
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        box.SetActive(false);
     }
 }
