@@ -41,7 +41,7 @@ public class chungBehavior : unitBehavior
         spaceComponent nextSpace = mySpace.chooseSpace(playerUnit);
         if (!nextSpace)
         {
-            Debug.Log("Unable to move, wating for next turn.");
+            //Debug.Log("Unable to move, wating for next turn.");
             return;
         }
         else if (nextSpace == mySpace)
@@ -67,7 +67,7 @@ public class chungBehavior : unitBehavior
         bool killed = false;
         if (nextSpace.unit)
         {
-            Debug.Log("Attacking!");
+            //Debug.Log("Attacking!");
 
             if (nextSpace.unit.takeDamage(damage))
             {
@@ -77,7 +77,7 @@ public class chungBehavior : unitBehavior
         }
         if (!nextSpace.unit || killed)
         {
-            Debug.Log("Moving to a new space");
+            //Debug.Log("Moving to a new space");
             if (inBattle)
             {
                 inBattle = false;

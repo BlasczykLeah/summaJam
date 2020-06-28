@@ -13,6 +13,9 @@ public class enemySpawn : MonoBehaviour
 
     public spaceComponent[] mySpawns;
 
+    public bool waiting = true;
+    int goldCountWait;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,7 @@ public class enemySpawn : MonoBehaviour
         for (int i = 0; i < spawnCooldowns.Length; i++) spawnCooldowns[i] = false;
         cooldowns = new float[units.Length];
 
+        chooseNewChoice();
         myChoice = 0;
         manager = GetComponent<playerManager>();
     }
@@ -49,25 +53,33 @@ public class enemySpawn : MonoBehaviour
             return;
         }
 
-        if(manager.money >= units[myChoice].transform.GetChild(0).GetComponent<unitBehavior>().cost && !spawnCooldowns[myChoice])
+        if (goldCountWait <= manager.money) waiting = false;
+        if (!waiting)
         {
-            // spawwwwwwwwwwwn it
-            //Debug.Log("Spawning " + units[myChoice].name);
+            if (manager.money >= units[myChoice].transform.GetChild(0).GetComponent<unitBehavior>().cost && !spawnCooldowns[myChoice])
+            {
+                // spawwwwwwwwwwwn it
+                //Debug.Log("Spawning " + units[myChoice].name);
 
-            spaceComponent spawn = mySpawns[Random.Range(0, mySpawns.Length)];
-            while(spawn.unit) spawn = mySpawns[Random.Range(0, mySpawns.Length)];
+                spaceComponent spawn = mySpawns[Random.Range(0, mySpawns.Length)];
+                while (spawn.unit) spawn = mySpawns[Random.Range(0, mySpawns.Length)];
 
-            GameObject unit = Instantiate(units[myChoice], spawn.transform.position, Quaternion.identity);
-            unit.transform.GetChild(0).GetComponent<unitBehavior>().objectSpawned(spawn, false);
+                GameObject unit = Instantiate(units[myChoice], spawn.transform.position, Quaternion.identity);
+                unit.transform.GetChild(0).GetComponent<unitBehavior>().objectSpawned(spawn, false);
 
-            cooldowns[myChoice] = unit.transform.GetChild(0).GetComponent<unitBehavior>().cooldown;
-            spawnCooldowns[myChoice] = true;
+                cooldowns[myChoice] = unit.transform.GetChild(0).GetComponent<unitBehavior>().cooldown;
+                spawnCooldowns[myChoice] = true;
 
-            manager.money -= units[myChoice].transform.GetChild(0).GetComponent<unitBehavior>().cost;
+                manager.money -= units[myChoice].transform.GetChild(0).GetComponent<unitBehavior>().cost;
 
-            chooseNewChoice();
+                chooseNewChoice();
+                waiting = false;
+                tryToSpawn();
+
+                return;
+            }
         }
-        if(indecisive > 7)
+        if (indecisive > 8)
         {
             //Debug.Log("Gonna try something else");
             chooseNewChoice();
@@ -78,5 +90,8 @@ public class enemySpawn : MonoBehaviour
     void chooseNewChoice()
     {
         myChoice = Random.Range(0, units.Length);
+        goldCountWait = Random.Range(2, 6) * 10;
+        //Debug.Log("I am waiting for " + goldCountWait);
+        waiting = true;
     }
 }
