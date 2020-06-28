@@ -18,7 +18,7 @@ public class arcaneBehavior : unitBehavior
         AudioMan.inst.PlayArcane();
 
         mySpace.addUnit(this);
-        StartCoroutine(waitToAct(speed));
+        StartCoroutine(waitToAct(0.001F));
     }
 
     protected override bool evolveCondition()

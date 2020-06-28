@@ -20,7 +20,7 @@ public class knightBehavior : unitBehavior
         AudioMan.inst.PlayKnight();
 
         mySpace.addUnit(this);
-        StartCoroutine(waitToAct(speed));
+        StartCoroutine(waitToAct(0.001F));
     }
 
     protected override void act()
