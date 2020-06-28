@@ -97,6 +97,8 @@ public class unitBehavior : MonoBehaviour
                 if (evolved) GameObject.Find("PlayerObject").GetComponent<playerManager>().health--;
             }
 
+            AudioMan.inst.PlayHit();
+
             mySpace.removeUnit();
             Destroy(myHealthBar);
             Destroy(gameObject);
