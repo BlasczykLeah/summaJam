@@ -12,7 +12,7 @@ public class knightBehavior : unitBehavior
         spaceComponent nextSpace = mySpace.chooseSpace(playerUnit);
         if (!nextSpace)
         {
-            Debug.Log("Unable to move, wating for next turn.");
+            //Debug.Log("Unable to move, wating for next turn.");
             return;
         }
         else if (nextSpace == mySpace)
@@ -38,7 +38,7 @@ public class knightBehavior : unitBehavior
         bool killed = false;
         if (nextSpace.unit)
         {
-            Debug.Log("Attacking!");
+            //Debug.Log("Attacking!");
             peacefulSpaces = 1;
 
             if (nextSpace.unit.takeDamage(damage))
@@ -49,7 +49,7 @@ public class knightBehavior : unitBehavior
         }
         if (!nextSpace.unit || killed)
         {
-            Debug.Log("Moving to a new space");
+            //Debug.Log("Moving to a new space");
             if (!killed) peacefulSpaces++;
 
             mySpace.removeUnit();

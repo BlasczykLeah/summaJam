@@ -138,7 +138,7 @@ public class unitBehavior : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log("DEAD");
+            //Debug.Log("DEAD");
             dead();
             return true;
         }

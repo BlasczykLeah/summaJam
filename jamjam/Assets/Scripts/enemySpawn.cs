@@ -42,9 +42,18 @@ public class enemySpawn : MonoBehaviour
 
     public void tryToSpawn()
     {
-        if(manager.money >= units[myChoice].transform.GetChild(0).GetComponent<unitBehavior>().cost)
+        int indecisive = Random.Range(0, 10);
+        if (indecisive < 3)
+        {
+            //Debug.Log("Eh, gonna wait another second.");
+            return;
+        }
+
+        if(manager.money >= units[myChoice].transform.GetChild(0).GetComponent<unitBehavior>().cost && !spawnCooldowns[myChoice])
         {
             // spawwwwwwwwwwwn it
+            //Debug.Log("Spawning " + units[myChoice].name);
+
             spaceComponent spawn = mySpawns[Random.Range(0, mySpawns.Length)];
             while(spawn.unit) spawn = mySpawns[Random.Range(0, mySpawns.Length)];
 
@@ -57,6 +66,12 @@ public class enemySpawn : MonoBehaviour
             manager.money -= units[myChoice].transform.GetChild(0).GetComponent<unitBehavior>().cost;
 
             chooseNewChoice();
+        }
+        if(indecisive > 7)
+        {
+            //Debug.Log("Gonna try something else");
+            chooseNewChoice();
+            tryToSpawn();
         }
     }
 
