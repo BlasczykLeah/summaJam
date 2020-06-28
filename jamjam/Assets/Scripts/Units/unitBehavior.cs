@@ -133,6 +133,8 @@ public class unitBehavior : MonoBehaviour
 
     public bool takeDamage(int dmg)
     {
+        AudioMan.inst.PlaySword();
+
         health -= dmg;
         myHealthBar.transform.GetChild(0).GetComponent<Image>().fillAmount = (float)health / (float)maxHealth;
 
@@ -168,6 +170,9 @@ public class unitBehavior : MonoBehaviour
     public void evolve()
     {
         evolved = true;
+
+        AudioMan.inst.PlayEvolve();
+
         transform.GetChild(0).gameObject.SetActive(true);
         Instantiate(particles, transform.GetChild(1).position, Quaternion.identity);
 
