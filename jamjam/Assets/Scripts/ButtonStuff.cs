@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonStuff : MonoBehaviour
 {
-    public GameObject buttons, inside, gameDesc, knight, thief, chungus, arcanist, credits;
+    public GameObject buttons, inside, gameDesc, knight, thief, chungus, arcanist, credits, deet;
     public Animator doorAnim;
 
     public void OpenTheGate()
@@ -28,7 +29,7 @@ public class ButtonStuff : MonoBehaviour
 
     public void OpenKnight()
     {
-        gameDesc.SetActive(false);
+        deet.SetActive(false);
         knight.SetActive(true);
     }
 
@@ -54,5 +55,21 @@ public class ButtonStuff : MonoBehaviour
     {
         arcanist.SetActive(false);
         credits.SetActive(true);
+    }
+
+    public void OpenDetails()
+    {
+        gameDesc.SetActive(false);
+        deet.SetActive(true);
+    }
+
+    public void end()
+    {
+        Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
