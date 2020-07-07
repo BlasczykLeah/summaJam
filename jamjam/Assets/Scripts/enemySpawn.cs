@@ -64,7 +64,7 @@ public class enemySpawn : MonoBehaviour
                 spaceComponent spawn = mySpawns[Random.Range(0, mySpawns.Length)];
                 while (spawn.unit) spawn = mySpawns[Random.Range(0, mySpawns.Length)];
 
-                GameObject unit = Instantiate(units[myChoice], spawn.transform.position, Quaternion.identity);
+                GameObject unit = Instantiate(units[myChoice], spawn.transform.position, Quaternion.Euler(0, 180, 0));
                 unit.transform.GetChild(0).GetComponent<unitBehavior>().objectSpawned(spawn, false);
 
                 cooldowns[myChoice] = unit.transform.GetChild(0).GetComponent<unitBehavior>().cooldown;
